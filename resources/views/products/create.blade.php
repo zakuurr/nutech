@@ -73,17 +73,19 @@
             <label for="exampleFormControlInput1" class="form-label fw-semibold">Upload Image</label>
             <div id="container" class="form-upload-image d-flex justify-content-center flex-column rounded">
               <div class="mx-auto">
-                <img src="{{ isset($product->gambar) ? '/assets/product/'.$product->gambar : '/assets/img/Image.png' }}" id="preview" class="img-fluid">
+                <img src="{{ isset($product->gambar) ? '/assets/product/'.$product->gambar : '/assets/img/Image.png' }}" id="preview" class="uploadImagePreview">
               </div>
-              <label for="" id="labelPreview" class="mx-auto">
+              <label for="file-ip-1" id="labelPreview" class="mx-auto">
                 <p class="fw-semibold">upload gambar disini</p>
               </label>
-              <input type="file" name="gambar" id="" value="{{ isset($product->gambar) ? $product->gambar : '' }}" accept=".jpg, .png" onchange="previewImg(event);">
-            </div>
-            @if ($errors->has('gambar'))
+              <input type="file" name="gambar" id="file-ip-1" accept=".jpg, .png" onchange="previewImg(event);">
+              @if ($errors->has('gambar'))
               <span class="text-danger">{{ $errors->first('gambar') }}</span>
             @endif
+            </div>
+
           </div>
+
           <div class="d-flex justify-content-end gap-3">
             <button type="reset" class="btn btn-outline-primary px-5">Batalkan</button>
             <button class="btn btn-primary px-5" type="submit">Simpan</button>

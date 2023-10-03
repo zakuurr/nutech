@@ -21,3 +21,10 @@
 - `php artisan migrate:fresh --seed`
 - `php artisan serve`
 
+## Login
+
+- email : ezakurnia50@gmail.com
+- pass : rezakurnia123
+
+
+
