@@ -17,7 +17,7 @@ class Product extends Model
         'nama_produk',
         'harga_beli',
         'harga_jual',
-        'stok_barang',
+        'stok',
         'gambar',
         'category_id',
     ];
@@ -25,5 +25,35 @@ class Product extends Model
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function scopeSearchAndFilter($query, $request)
+    {
+        return $query
+            ->when($request->search, function ($query) use ($request) {
+                $query->where('nama_produk', 'LIKE', '%' . $request->search . '%');
+            })
+            ->when($request->category_id, function ($query) use ($request) {
+                $query->whereHas('category', function ($query) use ($request) {
+                    $query->where('id', $request->category_id);
+                });
+            })
+            ->orderBy('created_at', 'desc')
+            ->paginate(10);
+    }
+
+    public function scopeExcel($query, $request)
+    {
+        return $query
+            ->when($request->search, function ($query) use ($request) {
+                $query->where('nama_produk', 'LIKE', '%' . $request->search . '%');
+            })
+            ->when($request->category_id, function ($query) use ($request) {
+                $query->whereHas('category', function ($query) use ($request) {
+                    $query->where('id', $request->category_id);
+                });
+            })
+            ->orderBy('created_at', 'desc')
+            ->get();
     }
 }

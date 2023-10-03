@@ -11,6 +11,8 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.2",
+        "maatwebsite/excel": "^3.1",
+        "realrashid/sweet-alert": "^7.1",
         "tymon/jwt-auth": "dev-develop"
     },
     "require-dev": {
@@ -27,7 +29,10 @@
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
-        }
+        },
+        "files": [
+            "app/Helpers/FormatUang.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

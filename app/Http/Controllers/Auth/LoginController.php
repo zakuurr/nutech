@@ -37,17 +37,13 @@ class LoginController extends Controller
     }
 
     public function logout(){
-        // Check if a JWT token is stored in the session
         if (Session::has('jwt_token')) {
             try {
                 $token = session('jwt_token');
-                //invalidate token
+
                 JWTAuth::invalidate($token);
             } catch (\Exception $e) {
-
             }
-
-            // clear session and logout
             Session::forget('jwt_token');
             Auth::logout();
         }

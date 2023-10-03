@@ -79,7 +79,7 @@
     padding:20px;
   }
   .form-upload-image img {
-    height: auto;
+    height: 200px;
   }
   .form-upload-image input {
     display:none;

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('nama_produk')->unique();
             $table->integer('harga_beli');
             $table->integer('harga_jual');
-            $table->integer('stok_barang');
+            $table->integer('stok');
             $table->string('gambar')->nullable();
             $table->unsignedBigInteger('category_id');
             $table->timestamps();

@@ -1,6 +1,25 @@
-@extends('layouts.app')
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-@section('content')
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>SIMS Web App</title>
+
+    <!-- Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <link rel="dns-prefetch" href="//fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+    <!-- Scripts -->
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('') }}assets/css/style.css">
+</head>
+<body>
+    <div id="app">
     <div class="row">
        <div class="col-sm-6 d-flex">
         <div>
@@ -35,4 +54,6 @@
         <img src="{{ asset('assets/img/img1.png') }}" alt="" class="w-50 vh-100" style="position:fixed">
        </div>
     </div>
-@endsection
+    </div>
+</body>
+</html>
