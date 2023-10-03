@@ -1,7 +1,0 @@
-<IfModule mod_rewrite.c>
-RewriteEngine on
-RewriteCond %{SERVER_PORT} ^443$
-RewriteRule ^$ public/ [L]
-RewriteRule (.*) public/$1 [L]
-RewriteRule (.*) https://nutech-test.com/$1
-</IfModule>

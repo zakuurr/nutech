@@ -12,6 +12,7 @@
 - `git clone https://github.com/zakuurr/nutech.git`
 - `cd nutech/`
 - `composer install`
+- `php artisan jwt:secret`
 - `npm install`
 - `cp .env.example .env`
 - `create database`
